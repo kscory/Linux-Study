@@ -1,7 +1,8 @@
 # Linux 기본 및 세팅
   - Linux 구성
   - Virtual box 및 Ubuntu 설치
-  - Putty 설치
+  - SSH console(putty) 설치
+  - 참고 : centOS 설치
 
 ---
 
@@ -10,19 +11,19 @@
   - 1991.8.26 에 처음 발표 그 후 계속 늘어가고 있다.
   - Linux 커널 구조
 
-  > dfdf.java
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/linuxkernal.png)
 
-  ```java
+  - Linux Kernal Source Tree Layout
 
-  ```
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/linuxkernal2.png)
 
 ---
 
-## 참고 개념
-  ### 1. 참고
+## Virtual box 및 Ubuntu
+  ### 1. Virtual box
   - 내용
 
 ---
 
-## 참고 문헌
-  ### 1. [링크]()
+## SSH console(putty)
+  ### 1.
