@@ -58,7 +58,7 @@
 
   ### 2. SSH console(Putty) - OSX 의 경우
   - OSX 환경의 경우 터미널을 연다.
-  - "$ ssh 192.168.56.10 –l ubuntu" 로 접속한다.
+  - "**$ ssh 192.168.56.10 –l ubuntu**" 로 접속한다.
 
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/putty3.png)
 
