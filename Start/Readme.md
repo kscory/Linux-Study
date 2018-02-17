@@ -17,6 +17,32 @@
 
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/linuxkernal2.png)
 
+  ### 2. 리눅스 파일 시스템 구조
+  - 리눅스 파일 시스템은 아래와 같이 구성된다.
+  - 리눅스 파일 시스템은 트리 구조로 되어 있으며 커널 구조에 의존하고 있다.
+  - 보통 접속하면 __/home__ 으로 들어가며 그 아래 파일을 만들게 된다.
+  - ext2, ext3, jfs, nfs, fat, ntfs, ... 등 존재
+  - __man fs__ 명령어를 이용하면 파일시스템 설명을 확인할 수 있다.
+
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/BasicBashShell/picture/FileStructure.png)
+
+  ### 3. File System 설명
+  - /boot : 부트로더와 커널이미지 관련한 디렉토리
+  - /bin : binary 파일을 보관하며, 기본적인 유틸리티와 부트에 필요한 파일 존재
+  - /sbin : system binary 관련된, 시스템 관리 툴 관련
+  - /lib : 가장 필수적인 library 와 커널 모듈 관련
+  - /etc : 프로그램 설정과 관련 (시스템 구성, 패스워드 등)
+  - /home : 사용자의 home 디렉토리
+  - /root : root(관리자)의 home 디렉토리
+  - /var : 다용도로 사용되며 보통 웹서비스에 이용 (ex> 로그, 메세지, lock 파일, www root, 등)
+  - /tmp : temporary 파일, 소켓 파일, pipe 파일 등
+  - /usr : 새로 추가된 라이브러리를 추가 (like /)
+  - /opt : 부가적인 소프트웨어들
+  - /proc : 가상 파일 시스템, 프로세스, 시스템 정보 및 유저공간에서의 커널 인터페이스 등
+  - /dev : Device 파일 (ex> block devices, character devices)
+  - /sys : 하드웨어 정보 혹은 관리를 위한 커널 인터페이스
+  - /mnt and /media : 자신의 파일 시스템에 새로운 미디어나 파일 시스템을 추가 (자신만의 파일 시스템으로 kerner level driver)
+    - ex> __mount -t vfat /dev/sdb1 /mnt/flash__
 ---
 
 ## Virtual box 및 Ubuntu
