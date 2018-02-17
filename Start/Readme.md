@@ -35,15 +35,32 @@
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/virtualbox2.png)
 
   ### 3. Ubuntu Setting 및 참고사항
-  - [Ubuntu Setting]() 에서 Setting 과정을 확인할 수 있다.
-  - 아래와 같이 CLI를 이용하여 날씨를 알오보도록 해보자
+  - [Ubuntu Setting](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/pdf/UbuntuSetting.pdf) 에서 Setting 과정을 확인할 수 있다.
+  - 아래와 같이 CLI를 이용하여 날씨를 알아보도록 해보자
 
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/ubuntu.png)
 
 ---
 
-## SSH console(putty)
-  ### 1.
+## SSH console(Putty)
+  ### 1. SSH console(Putty) - 윈도우 다운로드 및 접속
+  - 윈도우의 경우 https://www.putty.org/ 에 접속하여 알맞은 알맞은 버전을 다운받아 설치한다.
+
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/putty.png)
+
+  - Putty를 실행한 후 아래와 같이 Session에서 Host Name을 192.168.56.10 로 설정한 후 실행하고 경고문이 나온다면 잘 접속된 것이다.
+    - "192.168.56.10" 은 Ubuntu Server IP 로 Host Only 로 설정한 IP
+    - Port 가 22인지 확인하고, SSH 설정되어 있는지 확인
+    - Putty를 실행하기 전 반드시 가상머신을 통해 Ubuntu를 실행시킨 후 진행한다.
+  - Putty 연결이 되었다면 ID Password를 입력하여 아래와 "ubuntu@ubuntu:~$" 와 같이 나왔다면 SSH 접속이 성공한 것이다.
+
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/putty2.png)
+
+  ### 2. SSH console(Putty) - OSX 의 경우
+  - OSX 환경의 경우 터미널을 연다.
+  - "$ ssh 192.168.56.10 –l ubuntu" 로 접속한다.
+
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/putty3.png)
 
 ---
 
