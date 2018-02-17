@@ -24,7 +24,7 @@
   - ext2, ext3, jfs, nfs, fat, ntfs, ... 등 존재
   - __man fs__ 명령어를 이용하면 파일시스템 설명을 확인할 수 있다.
 
-  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/BasicBashShell/picture/FileStructure.png)
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Start/picture/FileStructure.png)
 
   ### 3. File System 설명
   - /boot : 부트로더와 커널이미지 관련한 디렉토리
