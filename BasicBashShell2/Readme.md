@@ -57,7 +57,6 @@
 
   ```
   gzip -9 lab1.tar                    // lab1.tar 파일을 gzip 형식으로 압축
-
   gzip -cd lab1.tar.gz | tar xvf –    // gzip 형식으로 된 파일을 압축해제
   gunzip -c lab1.tar.gz | tar xvf –   // 위와 동일
   ```
@@ -166,7 +165,22 @@
   man ls    // ls에 대한 도움말을 보여준다.
   ```
 
-  ### . lsattr
+  ### 11. df & du
+  - 디스크 사용량을 확인하는 명령어
+    - df : 리눅스 시스템 전체의 (마운트 된) 디스크 사용량을 확인
+    - du : 특정 디렉토리를 기준으로 디스크 사용량을 확인
+  - 사용법
+    - df : `df {옵션}`
+    - du : `du {옵션} {Path}`
+
+  ```
+  du            // 전체 디스크 사용량을 확인
+  du -h         // 전체 디스크 사용량을 G,M 등의 단위로 보여줌
+  du -h /home   // /home 디렉토리의 디스크 사용량을 G,M 등의 단위로 보여줌
+  du -sh /home  // 위와 동일하지만 요약된 정보를 보여줌
+  ```
+
+  ### 12. lsattr
   - 파일 및 디렉토리 속성을 출력한다.
   - 사용법 : `lsattr {-Radv} {대상파일들}`
     - `-R` : 디렉토리와 그 이하 모든 내용에 대해 재귀적으로 속성값 출력.
@@ -179,7 +193,7 @@
   lsattr -aR /tmp/ | less   // 모든 /tmp 속성을 재귀적으로 나열
   ```
 
-  ### . chattr
+  ### 13. chattr
   - 파일 및 디렉토리 속성을 설정하고 제어한다.
   - 사용법 : `chattr {-RV} {-v 설정버전} {+-=설정모드} {대상파일들}`
   - 옵션
@@ -204,13 +218,38 @@
 
 ---
 
-## 참고자료
-  ### 1. CLI를 사용하는 이유
-  - app1, app2, … app99 의 폴더를 만들어야 할 경우 GUI 환경에서는 99 번의 폴더 생성 작업을 실행해야 하지만 CLI의 경우 아래의 명령어만으로 99개의 폴더 생성이 가능하다.
+## Process & System Information & C Programming 관련 명령어
+  ### 1. Process 관련 명령어
+  - Monitoring
+    - `ps` : list of your process
+    - `ps aux` : all running process, with command Lines
+    - `top` : top processes
+    - `ksysgaurd` : Graphical monitor, more than process monitor
+    - `pstree` : tree of running processes
+    - `/proc/process-id` : kernel information about processes
+  - Process & Signal
+    - `skill -<signal number> <process id>` : user send signal
+    - `skill -L` : List of signals
+    - `man 7 signal` : Full description of signals
+    - `kill <procees-id>, kill -9 <process-id>` : Kill the process
+    - `killall -9 <process name>` : kill the process
 
-  ```
-  $ mkdir test        // 폴더를 생성
-  $ cd test           // 디렉토리 변경
-  $ mkdir app{1..99}  // 폴더를 99개 생성
-  ```
----
+  ### 2. System Information 관련 명령어
+  - System Information 관련 명령어
+    - `uname -a, -r` : Kernel name
+    - `dmesg` : Kernel messages
+    - `/var/log/` : system logs (syslogd) and application's messages
+    - `date` : date of system
+    - `uptime` : How long time your system is alive?
+    - `iostat <device name>`: usage of cpu and device
+    - `users, who, w` : list of on-line users
+    - `finger <user-name>/@<computer name>` : remote users info
+
+  ### 3.C Programming 관련 명령어
+  - All steps altogether
+    - `gcc -o <output name> <input C>`
+  - Intermediate results
+    - `-c` : Just compile, with out linking
+    - `-S` : Produce assembly code
+    - `-E` : Just process the file
+    - `-g` : Add debugging options
