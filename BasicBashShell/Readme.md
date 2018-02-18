@@ -1,7 +1,6 @@
 # Bash Shell 사용
   - Bash Shell 기본
-  - 기본 명령어 (Basic Commands)
-  - File 다루기
+  - 기본 명령어 1 (Basic Commands1 )
   - 참고 : CLI 사용 이유
 
 ---
@@ -29,6 +28,7 @@
   - Linux는 두가지 foreground와 background가 존재하며 실행시킨 프로세스는 background에서 실행된다.
 
   ### 4. 몇가지 단축키
+  - `tab` : 명령어의 일부만 입력하면 자동으로 검색해준다.
   - `CTRL-R` : 지난 명령어 이력을 검색
     - `$ history` 명령으로도 지난 명령어 이력을 출력할 수 있음.
     - 또한 arrow keys 를 사용해 지난 이력을 보거나 실행할 수 있음.
@@ -43,7 +43,7 @@
 ---
 
 
-## 기본 명령어 (Basic Commands)
+## 기본 명령어 1 (Basic Commands 1)
   ### 1. pwd
   - 지금 어느 위치에 있는지 알려준다.
   - 사용법 : `pwd`
@@ -107,9 +107,12 @@
   - 사용법 : `touch {옵션} {파일이름}`
     - `-r` : 시간 동기화
     - `-t` : 지정 시간으로 변경
+    - `-a` : 접근 시간 변경
+    - `-m` : 수정 시간 변경
 
   ```
-  touch test1   // 현재 디렉토리에 test1(파일 이름)을 만든다.
+  touch test1         // 현재 디렉토리에 test1(파일 이름)을 만든다.
+  touch myapp1/good   // myapp1 디렉토리에 good(파일 이름)을 만든다.
   ```
 
   ### 7. cp
@@ -129,6 +132,7 @@
   ### 8. rm
   - 파일을 지운다. (약어 : remove)
   - 사용법 : `rm {옵션} {디렉토리/파일}`
+    - `-i` : 삭제에 대한 여부 물음
     - `-f` : 강제삭제
     - `-r` : 디렉토리 삭제 시 하위 경로와 파일 삭제
     - `-v` : 파일 삭제 정보를 자세히 보여줌
@@ -136,6 +140,7 @@
   ```
   rm test2      // 현재 디렉토리에 있는 test2 파일을 지운다.
   rm -r myapp3  // 현재 디렉토리에 있는 myapp3 디렉토리를 지운다.
+  rm -fr myapps  // 현재 디렉토리에 있는 myapps 디렉토리를 강제로 지운다.
   ```
 
   ### 9. mv
@@ -153,13 +158,100 @@
   mv myapp mymvapp  // myapp 디렉토리를 mymvapp 으로 옮기거나 변경한다.
   ```
 
+  ### 10. echo
+  - 입력한 내용을 출력한다.
+  - 사용법 : `ehco {출력값}`
+    - Redirection 과 함께 이용 가능
 
----
+  ```
+  echo hello                // shell에 hello 를 출력한다.
+  echo hello >> test.txt    // hello를 test.txt에 append 한다.
+  ```
 
+  ### 11. cat & tac
+  - cat : 파일 내용을 출력한다.
+  - tac : 파일 내용을 역순으로 출력한다.
+  - 사용법 : `{cat or tac} ({옵션}) {파일 이름}`
+    - Redirection 과 함께 이용 가능
 
-## File 다루기
-  ### 1. ㅇ
-  -
+  ```
+  cat hello.txt         // hello.txt 파일의 내용을 모두 출력한다.
+  tac hello.txt         // hello.txt 파일의 내용을 역순으로 모두 출력한다.
+  cat >> hello.txt      // hello.txt 파일에 내용을 append (종료는 Ctrl + D)
+  ```
+
+  ### 12. less & more
+  - 텍스트 파일 내용을 화면에 읽을 수 있을 만큼씩 출력한다. (종료는 `q` 버튼 클릭)
+  - 사용법 : `less {파일 이름}` & `more {파일 이름}`
+  - 이는 `cat {파일 이름} | more` 과 동일하다.
+
+  ```
+  less hello.txt          // hello.txt 파일의 내용을 화면의 크기만큼 출력한다.
+  more hello.txt          // hello.txt 파일의 내용을 화면의 크기만큼 출력하며 More로 표시 및 퍼센테이지를 알려준다.
+  ```
+
+  ### 13. chgrp
+  - 파일의 사용자 그룹 속성을 변경한다.
+  - 사용법 : `chgrp {옵션} {그룹} {파일}`
+    - `-c` : 변경된 파일만 자세하게 보여준다.
+    - `-f` : 변경되지 않은 파일에 대해서 오류 메시지를 보여주지 않는다.
+    - `-v` : 작업상태를 자세히 보여준다.
+    - `-R` : 경로와 그 하위 파일들을 모두 변경한다.
+
+  ```
+  chgrp bar /home/foo   // bar 속성을 /home/foo 로 변경
+  ```
+
+  ### 14. chown
+  - 파일의 소유자나 소유그룹을 변경 (보통 모두 바꾸므로 -R 옵션 사용)
+  - 사용법 : `chown {옵션} {소유자:소유그룹} {파일}` or `chown {옵션} {소유자.소유그룹} {파일}`
+    - `-c` : 변경된 파일만 자세하게 보여준다.
+    - `-f` : 변경되지 않은 파일에 대해서 오류 메시지를 보여주지 않는다.
+    - `-v` : 작업상태를 자세히 보여준다.
+    - `-R` : 경로와 그 하위 파일들을 모두 변경한다.
+
+  ```           
+  chown -R foo:bar /home/foo                  // foo:bar 를 /home/foo 로 변경
+  chown -R foo:bar bobs --from=nobody:nobody  // bobs 디렉토리 내의 파일중 소유자가 nobody이고 소유그룹이 nobody로 되어 있는 파일의 소유자를 foo 변경하고 소유그룹을 bar로 변경
+  ```
+
+  ### 15. chmod
+  - 파일의 퍼미션을 변경
+  - 사용법 : `chmod {옵션} {퍼미션} {파일}`
+    - `-c` : 변경된 파일만 자세하게 보여준다.
+    - `-f` : 변경되지 않은 파일에 대해서 오류 메시지를 보여주지 않는다.
+    - `-v` : 작업상태를 자세히 보여준다.
+    - `-R` : 경로와 그 하위 파일들을 모두 변경한다.
+
+  ```
+  chmod 755 myfile    // 소유자에겐 7(rwx), 그룹과 나머지에겐 5(r-x) 권한부여
+  ```
+
+  ### 16. umask
+  -  파일이 만들어질때 허가권 기본값 (777에서 뺀다.)
+  - 사용법 : `umask {777-퍼미션}`
+
+  ```
+  umask 077   // chmod 722 와 동일 (no one else cand do anything)
+  ```
+
+  ### 17. file
+  - 파일 타입을 확인한다.
+  - 사용법 : `file {파일 or 디렉토리}`
+
+  ```
+  file hello.txt   // hello.txt 파일의 타입을 확인
+  ```
+
+  ### 18. head & tail
+  - head : 파일 내용 중 처음 10줄 출력
+  - tail : 파일 내용 중 마지막 10줄 출력
+  - 사용법 : `head or tail {파일}`
+
+  ```
+  head hello.txt   // hello.txt 내용중 처음 10줄 출력
+  tail hello.txt   // hello.txt 내용중 마지막 10줄 출력
+  ```
 
 ---
 
