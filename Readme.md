@@ -9,3 +9,6 @@
 
 > ### 3. [Basic Bash Shell2](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/BasicBashShell2)
 >> - Basic Commands 2 - tar, gzip & gunzip, bzip2 & bunzip2, backtick, Hard & Soft Link, find, whereis & which & locate, !, man, df & du, lsattr, chattr / Process & C programming 관련 명령어
+
+> ### 4. [Basic Vi/Vim](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/BasicVi)
+>> - vi/vim 실행 / 커서 이동 / input 모드 변경 / Delete / Paste / Undo & Redo / Search / Save & Quit / 창 나누기 / 탭 나누기
