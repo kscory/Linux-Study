@@ -253,6 +253,16 @@
   tail hello.txt   // hello.txt 내용중 마지막 10줄 출력
   ```
 
+  ### 19. shutdown
+  - 전원을 끈다.
+  - 사용법 : `shutdown {옵션} {시간}`
+
+  ```
+  shutdown 22:30      // 22:30 에 전원을 끈다
+  shutdown –r now     // 지금 재부팅 시작
+  shutdown –h now     // 지금 바로 전원을 끈다
+  ```
+
 ---
 
 ## 참고사항
