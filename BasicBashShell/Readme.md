@@ -8,7 +8,7 @@
 ## Bash Shell 기본
   ### 1. 기본 명령어의 구조
   - "command name" "Options(flags)" /"Arguments"
-  - ex> `ls -1 /etc`
+  - ex> `ls -l /etc`
 
   ### 2. Shell의 기본
   - Shell이란 사용자가 실행을 입력하고 관리하는 명령을 해석한다.
@@ -73,6 +73,7 @@
     - `-d` : 디렉토리 정보 출력
     - `-n` : UID, GID 출력
     - `-R` : 하위 경로와 모든 파일 나열
+  - 그 외에도 소팅 등 줄 수 있다.
 
   ```
   ls                      // 디렉토리 파일 정보를 간략하게 보여준다.

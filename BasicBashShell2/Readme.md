@@ -15,6 +15,11 @@
     - `>>` : append
     - `<` : Read input`
 
+    ```
+    echo "hello" > hello.txt     //  hello 라는 문자를 hello.txt에 overwrite
+    echo "hello2" > hello.txt    //  hello2 라는 문자를 hello.txt에 append
+    ```
+
   ### 2. tar
   - 파일을 압축하고 해제하는 명령어
   - 사용법 (압축) : `tar {옵션} {생성파일} {압축할 파일}`
