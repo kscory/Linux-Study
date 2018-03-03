@@ -79,12 +79,12 @@
 ## 참고
   ### 1. 가상머신 복제
   - 가상머신 복제를 하게 되면 지금까지 설정한 파일부터 다시 시작할 수 있는 장점이 있다.
-  - ⓐ 가상머신 복제를 하기 위해서는 "내보내기" 혹은 "복제" 를 실행
-  - ⓑ 네트워크를 변경 : `sudo vi /etc/network/interfaces`
+  - 가상머신 복제를 하기 위해서는 "내보내기" 혹은 "복제" 를 실행
+  - 네트워크를 변경 : `sudo vi /etc/network/interfaces`
     - ex> "192.168.56.11" 로 변경
-  - ⓒ hostname을 변경 : `sudo vi /etc/hostname`
+  - hostname을 변경 : `sudo vi /etc/hostname`
     - ex> "ubuntu-clone" 로 변경
-  - ⓓ 복제한 가상머신 리부트 : `sudo reboot`
+  - 복제한 가상머신 리부트 : `sudo reboot`
 
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/clone.png)
 
