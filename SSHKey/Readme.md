@@ -1,7 +1,7 @@
 # SSH Key
   - SSH 란
-  - 리눅스에서 설치 및 사용법 (Only Linux)
-  - 윈도우에서 설치
+  - 리눅스에서 생성 및 사용법 (Only Linux)
+  - 윈도우에서 설정
   - (계속 추가)
 
 ---
@@ -38,20 +38,35 @@
 
 ---
 
-## 리눅스에서 설치 및 사용법 (Only Linux)
-  ### 1. SSH Key 설치 및 설정
-  - ㅇㅇ
+## 리눅스에서 생성 및 사용법 (ubuntu, osx 등 unix 계열 환경)
+  ### 1. SSH Key 생성 및 설정
+  - ssh-keygen을 이용해서 ssh key 를 생성 : `ssh-keygen -t rsa`
+  - 공공키를 인증을 위한 키셋 생성
 
-  ```
-
+  ```bash
+  cd ~/.ssh                         # ~/.ssh 폴더로 이동
+  cp id_rsa.pub authorized_keys     # 공공 키를 복사하여 공개키 리스트를 생성(복사)
+  chmod 600 ~/.ssh/authorized_keys  # 인증키 접근 권한을 사용자만으로 변경
   ```
 
   ### 2. 네트워크 연결
-  - ㅇㅇ
+  - ssh key 복사
+  - ssh key를 이용해서 서버에 접속
+    - 다른 서버에 접속
+    - 자신의 서버에 접속
+  - 나올때는 `exit` 를 이용
+  - 만약 접속한 계정이 나오면 접속이 성공한 것
+  - 참고
+    - ip 에 대한 정보 확인 : `ifconfig –a`
+    - 특정한 호스트가 도달할 수 있는지의 여부를 테스트 : `ping 192.168.56.10` </br> (192.168.56.10에 호스트가 도달할 수 있는지 확인할 수 있다. (CTRL+C) 로 빠져나옴)
 
+  ```bash
+  ssh-copy-id ubuntu@192.168.56.11  # 192.168.56.11 에 있는 ubuntu 사용자에 public key 를 복사
+  ssh 192.168.56.11                 # 192.168.56.11 로 네트워크 연결
+  ssh -i ~/.ssh/id_rsa              # 자신의 서버로 접속 (ssh –i 명령은 개인키를 지정하는 명령어)
   ```
 
-  ```
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/SSHKey/picture/ssh2.png)
 
 ---
 
