@@ -4,7 +4,7 @@
   - NTP 서버
   - 참고 - 가상머신 복제
 
----aptget.pn
+---
 
 ## SW/Library 설치
   ### 1. 직접 설치
@@ -43,36 +43,37 @@
 
 ---
 
-## 사용자 관리, systemctl 서비스 관리
-  ### 1. 사용자 관리
-  - ㅇㅇ
+## systemctl 서비스 관리, 사용자 관리
+  ### 1. systemctl 서비스 관리
+  - systemctl 명령어를 통해 서비스 관리 가능
+    - 현재 동작중인 서비스 목록 표시 : `systemctl –t service`
+    - 서비스 설정을 표시 : `systemctl list-unit-files –t service`
 
-  ```Bash
+  ### 2. 사용자 관리
+  - 사용자 추가 및 사용자 변경가능
+    - 사용자 추가 : `sudo adduser 사용자이름`
+    - 사용자를 관리자 권한으로 변경 : `sudo usermod -G sudo 사용자이름`
+    - 다른 사용자로 이동 : `su -사용자이름`
 
-  ```
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/adduser.png)
 
-  ### 2. systemctl 서비스 관리
-  - ㅇㅇ
-
-  ```Bash
-
-  ```
 ---
 
 ## NTP 서버
-  ### 1. 사용자 관리
-  - ㅇㅇ
+  ### 1. NTP 서버란
+  - 서버가 여러대인 경우 동기화되는 시간이 (latency - 네트워크에서 딜레이되는 시간) 이 생기는 것을 막기 위해서 필요
+  - 하둡 or openstack 등 여러개의 서버를 동시에 사용할 때 시간딜레이가 생기면 맞지 않을 수가 있으므로 NTP 서버를 두고 시간을 일치시킨다.
+  - NTP 서버를 설정한 후 실행하면 delay 가 생기지 않는 것을 볼 수 있다.
 
-  ```Bash
+  ### 2. NTP 서버 설치 및 설정
+  - NTP 서버 설치 : `$ sudo apt-get –y install ntp`
+  - 에디터를 이용해 환경 설정 변경 : `$ sudo vi /etc/ntp.conf`
+  - NTP 서비스를 동작 : `systemctl restart ntp`
+  - NTP 서버 동작을 확인 : `ntpq -p`
 
-  ```
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/NTP.png)
 
-  ### 2. systemctl 서비스 관리
-  - ㅇㅇ
-
-  ```Bash
-
-  ```
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/NTP2.png)
 ---
 
 ## 참고
