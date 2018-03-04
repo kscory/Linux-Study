@@ -12,3 +12,12 @@
 
 > ### 4. [Basic Vi/Vim](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/BasicVi)
 >> - vi/vim 실행 / 커서 이동 / input 모드 변경 / Delete / Paste / Undo & Redo / Search / Save & Quit / 창 나누기 / 탭 나누기
+
+> ### 5. [Linux Package](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/LinuxPackage)
+>> - SW/Library 설치(소스코드 and 커맨드 기반) / 사용자 관리 / systemctl 서비스 관리 / NTP 서버 / 가상머신 복제(참고)
+
+> ### 6. [SSH Key](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/SSHKey)
+>> - SSH Key 란 / 리눅스에서만 사용 / 윈도우에서 사용
+
+> ### 7. [Bash Shell Script 1](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/BashShellScript)
+>> - 실행 방법 / 주석 / 변수 / 배열 / 조건문
