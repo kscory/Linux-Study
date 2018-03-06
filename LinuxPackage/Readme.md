@@ -2,7 +2,7 @@
   - SW/Library 설치, 업데이트 및 업그레이드, apt-get
   - 사용자 관리, systemctl 서비스 관리
   - NTP 서버
-  - 참고 - 가상머신 복제
+  - 참고 - 가상머신 복제, 업데이트 오류시 해결
 
 ---
 
@@ -89,4 +89,7 @@
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/clone.png)
 
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/clone2.png)
+
+  ### 2. kr.archive.ubuntu.com 에 접속을 못 해서 fail이 뜨는 경우
+  - `sudo vi /etc/apt/sources.list` 를 입력하여 리스트에 있는 모든 "kr.archive.ubuntu.com" 을  "ftp.daum.net" 로 수정한다.
 ---
