@@ -20,4 +20,7 @@
 >> - SSH Key 란 / 리눅스에서만 사용 / 윈도우에서 사용
 
 > ### 7. [Bash Shell Script 1](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/BashShellScript)
->> - 실행 방법 / 주석 / 변수 / 배열 / 조건문
+>> - 실행 방법 / 주석 / 변수 / 배열 / 조건문(test, if, case)
+
+> ### 8. [Bash Shell Script 2](https://github.com/Lee-KyungSeok/Linux-Study/tree/master/BashShellScript2)
+>> - 반복문 / 인자 전달 및 입력 / 파일 입출력 / 함수 / read / select / line / local
