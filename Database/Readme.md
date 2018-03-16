@@ -1,8 +1,7 @@
 # MySQL
-  - MySQL
-    - mysql 설치 및 실행
-    - 외부 파일로 명령어 실행 방법
-  - [MySQL 설명 및 명령어](https://github.com/Lee-KyungSeok/MySQL-Study)
+  - mysql 설치 및 실행
+  - 외부 파일로 명령어 실행 방법
+  - [참고 - MySQL 설명 및 명령어](https://github.com/Lee-KyungSeok/MySQL-Study)
 
 ---
 
