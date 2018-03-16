@@ -2,7 +2,7 @@
   - SW/Library 설치, 업데이트 및 업그레이드, apt-get
   - 사용자 관리, systemctl 서비스 관리
   - NTP 서버
-  - 참고 - 가상머신 복제, 업데이트 오류시 해결
+  - 참고 - 가상머신 복제, 저장소 위치 변경
 
 ---
 
@@ -77,7 +77,17 @@
 ---
 
 ## 참고
-  ### 1. 가상머신 복제
+  ### 1. 저장소 위치 변경
+  - 우분투 한국 서버가 이전 작업 중이므로 서버 저장소를 바꿔 주어야 한다. (kr.archive.ubuntu.com 에 접속을 못 해서 fail이 뜨게 된다)
+  - 저장소 위치를 "kr.archive.ubuntu.com" 에서  "ftp.daum.net" 로 수정한다.
+  - 위치 변경 방법
+    - 서버 저장소가 저장된 파일을 연다 : `$ sudo vi /etc/apt/sources.list`
+    - 에디터에서 저장소 주소를 바꾼다(치환명령 이용) : `: %s/kr.archive.ubuntu.com/ftp.daum.net/g`
+    - 바뀐 저장소로 업데이트 한다 : `$ sudo apt-get update`
+
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/storage.png)
+
+  ### 2. 가상머신 복제
   - 가상머신 복제를 하게 되면 지금까지 설정한 파일부터 다시 시작할 수 있는 장점이 있다.
   - 가상머신 복제를 하기 위해서는 "내보내기" 혹은 "복제" 를 실행
   - 네트워크를 변경 : `sudo vi /etc/network/interfaces`
@@ -89,7 +99,4 @@
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/clone.png)
 
   ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/LinuxPackage/picture/clone2.png)
-
-  ### 2. kr.archive.ubuntu.com 에 접속을 못 해서 fail이 뜨는 경우
-  - `sudo vi /etc/apt/sources.list` 를 입력하여 리스트에 있는 모든 "kr.archive.ubuntu.com" 을  "ftp.daum.net" 로 수정한다.
 ---
