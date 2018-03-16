@@ -1,10 +1,9 @@
 # Python
-  - Python
-    - python 설치
-    - pyenv 설치 및 실행
-    - python 실행 예시
-    - PyMySQL 설치
-  - [Python 설명 및 명령어](https://github.com/Lee-KyungSeok/Python-Study)
+  - 기본적인 설치
+  - pyenv 및 pyenv-virtualenv
+  - python 실행
+  - python 관련 프레임워크 및 패키지 설치
+  - [참고 - Python 설명 및 명령어](https://github.com/Lee-KyungSeok/Python-Study)
 
 ---
 
@@ -121,11 +120,40 @@
 ---
 
 ## 4. Python 실행하기
-  ### ㅇㅇ
-  - ㅇㅇ
+  ### 1. 일반적인 Python 실행
+  - `python` : python 2점대를 실행
+  - `python3` : python 3점대를 실행
+  - 세개의 오른꺽쇠(>>>)를 파이썬 쉘 프롬프트라고 하며 이 예제가 파이썬 쉘에서 돌아가고 있다는 것을 의미
+  - 아래 그림에서 5는 이 표현식>>> 3+2의 결과
 
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Python/picture/start.png)
+
+  ### 2. pyenv 와 pyenv virtualenv 를 설정한 경우
+  - `python` : 고정한 버전을 실행
+
+  ![](https://github.com/Lee-KyungSeok/Linux-Study/blob/master/Python/picture/start2.png)
 ---
 
-## 5. PyMySQL 설치
-  ### ㅇㅇ
-  - ㅇㅇ
+## 5. 파이썬 관련 프레임워크 및 패키지 설치
+  ### 1. 사용법
+  - 파이썬 패키지 설치는 pip 패키지 관리자를 사용
+  - pip는 항상 최신의 것으로 업데이트 해주어야 오류가 발생하지 않는다.
+
+  ```
+  $ pip install -U pip setuptools
+  ```
+
+  ### 2. 몇가지 패키지 예시
+
+  ```bash
+  $ pip install PyMySQL # PyMySQL 설치
+  $ pip install django==1.10 # django 설치
+  $ pip install jupyter # jupyter 설치
+  $ pip freeze # 설치한 패키지 리스트 확인
+
+  # 유용한 패키지 예시
+  $ pip install django-extensions # settings.py 내 INSTALLED_APPS에 django_extensions 추가 필요
+  $ pip install "ipython[notebook]"
+  $ python manage.py shell_plus # 익스텐션 앱을 설치하면 shell_plus 사용가능
+  $ python manage.py shell_plus --notebook # jupyter notebook 사용
+  ```
